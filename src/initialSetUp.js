@@ -2,14 +2,18 @@ import restImage from './restaurant.jpeg';
 
 
 export default function intialSetUp() {
-    const contentDiv = document.createElement("div");
+const contentDiv = document.createElement("div");
 contentDiv.classList.add("content")
 const theBody = document.querySelector("body");
 theBody.appendChild(contentDiv);
 
-const navDiv = document.createElement("div");
+const navDiv = document.createElement("nav");
 navDiv.classList.add("nav");
 contentDiv.appendChild(navDiv);
+
+const belowNavContainer = document.createElement("section");
+belowNavContainer.classList.add("belowNavContainer");
+contentDiv.appendChild(belowNavContainer);
 
 const navDivPAbout = document.createElement("p");
 navDivPAbout.textContent = "About Us";
@@ -32,15 +36,16 @@ navDiv.appendChild(navDivPMenu);
 const headerDiv = document.createElement("header");
 headerDiv.classList.add("header");
 headerDiv.textContent = "This restaurant";
-contentDiv.appendChild(headerDiv);
+belowNavContainer.appendChild(headerDiv);
 
 const restImageEl = new Image();
 restImageEl.classList.add("restaurantImage");
+restImageEl.alt = "image of restaurant seating and vista";
 restImageEl.src = restImage;
-contentDiv.appendChild(restImageEl);
+belowNavContainer.appendChild(restImageEl);
 
 const tabContainerDiv = document.createElement("div");
 tabContainerDiv.classList.add("sectionContainer");
-contentDiv.appendChild(tabContainerDiv);
+belowNavContainer.appendChild(tabContainerDiv);
 
 }

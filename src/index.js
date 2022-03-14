@@ -26,6 +26,16 @@ navMenu.addEventListener('click', function(e) {
 });
 
 
+const navItems = document.querySelectorAll(".navItem");
+navItems.forEach(e => e.addEventListener("mouseenter", function (e) {
+    e.target.classList.add('navMouseAnimation');
+  }));
+  navItems.forEach(e => e.addEventListener("mouseleave", function (e) {
+    e.target.classList.remove('navMouseAnimation');
+  }));
+  
+
+
 function clearcontainer() {
     while (containerDiv.firstChild) {
         containerDiv.removeChild(containerDiv.firstChild);
